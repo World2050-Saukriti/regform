@@ -15,7 +15,7 @@
 
             height:140px;
             width:140px;
-           
+           egb 
         }
         .plogo{
             height: 100px;
@@ -469,6 +469,8 @@ function downloadImage() {
                 openLotteryModal(data.number, data.dt);
 
             }).catch(err=>{
+                 sbtn.disabled=false;
+                sbtn.textContent="Register"
                 alert("Error : "+err.message)
             })
             // console.log()
