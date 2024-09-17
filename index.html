@@ -477,6 +477,8 @@ function downloadImage() {
             // Proceed with form submission logic (e.g., AJAX or other processing)
         })
         .catch(function (errors) {
+            sbtn.disabled=false;
+            sbtn.textContent="Register"
             const errorMessages = errors.inner.map(err => `${err.path}: ${err.message}`).join('\n');
             alert(`Validation errors:\n\n${errorMessages}`);
         });
