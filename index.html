@@ -276,15 +276,14 @@ rel="stylesheet"
         <div class="modal-body">
             <div class="logos d-flex align-items-center justify-content-between mb-3 mt-3">
                 <img src="KAUN BANEGA LAKHPATI2.svg" class="plogo" alt="lakhputi">
-                <img src="75.jpeg" alt="lakhputi" class="plogo">
+                <img src="SPLOGO.png" alt="lakhputi" class="plogo">
             </div>
             <hr>
             <h4 class="w-100 text-center">Registration Succesful</h4>
             <p><strong>Registration Number:</strong> <span id="lotteryNumber"></span></p>
             <p><strong>Date of Registration:</strong> <span id="registrationDate"></span></p>
         </div>
-        <div class="modal-footer">
-            <button class="print-btn" onclick="forprint()">Print</button>
+        <div class="modal-footer noprint">
             <button class="download-btn" onclick="downloadImage()">Download</button>
             <!-- <button class="close-btn" onclick="closeModal()">Close</button> -->
         </div>
@@ -351,7 +350,7 @@ rel="stylesheet"
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
       © 2020 Copyright:
-      <a class="text-reset fw-bold" href="#">MGSSS Bermiok</a>
+      <a class="text-reset fw-bold" href="#">MSGSSS - Bermiok</a>
     </div>
      <!-- Modal -->
      
@@ -395,6 +394,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js"
 }
 
 function downloadImage() {
+    document.querySelector(".noprint").remove()
     html2canvas(document.querySelector("#lotteryModal")).then(canvas => {
         let durl = canvas.toDataURL(); // Convert the element to base64 image
         
